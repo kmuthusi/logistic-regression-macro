@@ -53,9 +53,9 @@ The user should specify input parameters described in the table below unless the
 |tabletitle	|title of output table|
 |surveyname	|abbreviation for survey/study to be included in the output|
 
-A sample macro call program, "svy logistic regression anafile.sas", is also provided as part of this repository.
+A sample macro call program, `svy logistic regression anafile.sas`, is also provided as part of this repository.
 
-A manuscript describing more details about the macro contents and usage is available online at: https://doi.org/10.1371/journal.pone.0214262
+A `manuscript` describing more details about the macro contents and usage is available online at: https://doi.org/10.1371/journal.pone.0214262
 
 ## Public Domain
 This repository constitutes a work of the United States Government and is not
