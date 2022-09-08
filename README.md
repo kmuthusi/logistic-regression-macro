@@ -19,7 +19,8 @@ In summary, the macro has been design to provide the user with the following ben
 ## How to use the Macro
 The user should specify input parameters described in the table below unless the description is prefixed by (optional). The user, however, does not interact with the sub-macros. To achieve full potential of the SAS macro, the user must ensure that the analysis dataset is clean, analysis variables are well labelled, and values of variables have been converted into appropriate SAS formats before they can be input to the macro call.
 
-|`%svy_unilogit` and `%svy_multilogit` macros||
+Parameters for `%svy_unilogit` and `%svy_multilogit` macros
+
 |Parameter|Description|
 |---------|-----------|
 |dataset	|name of input dataset|
@@ -44,7 +45,8 @@ The user should specify input parameters described in the table below unless the
 |print	|variable for displaying/suppressing the output table on the output window which takes the values (NO=suppress output, YES=show output)|
 and
 
-|`svy_printlogit` macro||
+Parameters for the `svy_printlogit` macro
+
 |Parameter|Description|
 |---------|-----------|
 |outputdir	|path for directory/folder where output is saved|
