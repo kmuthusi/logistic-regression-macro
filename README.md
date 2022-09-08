@@ -9,11 +9,33 @@ We developed a SAS® macro, %svy_logistic_regression, for fitting simple and mul
 
 The SAS® code presented in this macro is comprehensive, easy to follow, manipulate and to extend to other areas of interest. It can also be incorporated quickly by the statistician for immediate use. It is an especially valuable tool for generating quality, easy to review tables which can be incorporated directly in a publication. The macro has being developed to run on windows platform and might require appropriate adjustments to run on other operating systems platforms.
 
+## How to use the Macro
+The user should specify input parameters described in the table below unless the description is prefixed by (optional). The user, however, does not interact with the sub-macros. To achieve full potential of the SAS macro, the user must ensure that the analysis dataset is clean, analysis variables are well labelled, and values of variables have been converted into appropriate SAS formats before they can be input to the macro call.
+
+|Parameter|Description|
+|---------|-----------|
+| `%svy_unilogit` and `%svy_multilogit` macros |
+|dataset		|name of input dataset|
+|truthvar	|name of reference/truth variable e.g., abbott_plasma_vl|
+|truthcutvalue	|cutoff value to use to categorize values of test variable as having disease or not e.g., 1,000 so that if value ≥ 1,000 then presence of disease, otherwise absence of disease|
+|testvarlist	|list of diagnostic test variable(s) separated by space e.g., vdbs_vl mdbs_vl ddbs_vl|
+|testcutvalue	|cutoff value to use to categorize values of test variable as having disease or not e.g., 1,000 so that if value ≥ 1,000 then presence of disease, otherwise absence of disease|
+|domain		|(optional) domain variable for sub-population analysis|
+|domainvalue	|(optional) value of domain/sub-population of interest (should be numeric). Required if domain is specified|
+|condition	|(optional) any conditional statements to create and or fine-tune the final analysis dataset specified using one IF statement|
+|outputdir	|path for directory/folder where output is saved|
+|tablename	|short name of output table|
+|tabletitle	|title of output table|
+|surveyname	|abbreviation for survey/study to be included in the output|
+|decimalpoints	|number of decimal places for each estimated measure|
+|alpha		|(optional) desired level of significance (default=0.05, for 95% confidence intervals)|
+|missvaluelabel	|(optional) value label for missing values. If missing data have a format, it should be provided, otherwise macro assumes the default format “.”|
+|varmethod  |(optional) method for computing confidence intervals namely "Normal" (default) for normal distribution or "Wilson" (most desired) for Wilson score or "Exact" for exact binomial approximations|
+|print	|variable for displaying/suppressing the output table on the output window which takes the values (NO=suppress output, YES=show output)|
+
 A sample macro call program, "svy logistic regression anafile.sas", is also provided as part of this repository.
 
-A manuscript describing more about the macro contents and usage is available online at: https://doi.org/10.1371/journal.pone.0214262
-
-## How to use the macro
+A manuscript describing more details about the macro contents and usage is available online at: https://doi.org/10.1371/journal.pone.0214262
 
 ## Public Domain
 This repository constitutes a work of the United States Government and is not
