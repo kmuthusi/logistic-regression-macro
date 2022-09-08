@@ -1,16 +1,19 @@
-# Place holder for Repository Name
+# `%svy_logistic_regression`: A generic SAS macro for simple and multiple logistic regression and creating quality publication-ready tables using survey or non-survey data.
+
 This repository was created for use by CDC programs to collaborate on public health surveillance related projects in support of the CDC Surveillance Strategy.  Github is not hosted by the CDC, but is used by CDC and its partners to share information and collaborate on software.
 
-# %svy_logistic_regression: macro
-This is a generic SAS macro for creating publication-quality tables from simple and multiple logistic regression models. The macro uses both survey or non-survey data. It outputs a quality-publication table of Odds Ratio (95% CI) from simple (bi-variate) and multiple (multivariable) logistic regression in MS Word and Excel results. 
+## Macro description
+Reproducible research is increasingly gaining interest in the research community. Automating the production of research manuscript tables from statistical software can help increase the reproducibility of findings. Logistic regression is used in studying disease prevalence and associated factors in epidemiological studies and can be easily performed using widely available software including SAS®, SUDAAN, Stata or R. However, output from these software must be processed further to make it readily presentable. There exist several procedures developed to organize regression output, though many of them suffer limitations of flexibility, complexity, lack of validation checks for input parameters, as well as inability to incorporate survey design
 
-The macro is made up of several auxiliary sub-macros. The %svy_logitc sub-macro performs simple (bivariate) logistic regression model on categorical predictors. The %svy_logitn sub-macro performs simple (bivariate) logistic regression model on continuous predictors. The %svy_multilogit sub-macro performs multiple (multivariable) logistic regression on selected predictors. The %svy_printlogit sub-macro combines results from simple (bivariate) and multiple (multivariable) logistic regression and packages the output in a publication-quality table which is exported to MS Word and Excel. The %runquit sub-macro enforces in-built SAS validation checks on input parameters. 
+We developed a SAS® macro, %svy_logistic_regression, for fitting simple and multiple logistic regression models. The macro also creates quality publication-ready tables using survey or non-survey data which aims to increase transparency of data analyses. It further significantly reduces turn-around time for conducting analysis and preparing output tables while also addressing the limitations of existing procedures. In addition, the macro allows for user-specific actions to handle missing data as well as use of replication-based variance estimation methods.
 
-The macro has being developed to run on windows platform and might require appropriate adjustments to run on other operating systems platforms.
+The SAS® code presented in this macro is comprehensive, easy to follow, manipulate and to extend to other areas of interest. It can also be incorporated quickly by the statistician for immediate use. It is an especially valuable tool for generating quality, easy to review tables which can be incorporated directly in a publication. The macro has being developed to run on windows platform and might require appropriate adjustments to run on other operating systems platforms.
 
 A sample macro call program, "svy logistic regression anafile.sas", is also provided as part of this repository.
 
 A manuscript describing more about the macro contents and usage is available online at: https://doi.org/10.1371/journal.pone.0214262
+
+## How to use the macro
 
 ## Public Domain
 This repository constitutes a work of the United States Government and is not
