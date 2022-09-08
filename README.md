@@ -43,7 +43,6 @@ The user should specify input parameters described in the table below unless the
 |est_decimal|number of decimal places for for estimated percentage |
 |p_value_decimal |number of decimal places for computed p-value |
 |print	|variable for displaying/suppressing the output table on the output window which takes the values (NO=suppress output, YES=show output)|
-and
 
 ### Parameters for the `svy_printlogit` macro
 
