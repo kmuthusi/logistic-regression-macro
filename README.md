@@ -44,7 +44,7 @@ The user should specify input parameters described in the table below unless the
 |p_value_decimal |number of decimal places for computed p-value |
 |print	|variable for displaying/suppressing the output table on the output window which takes the values (NO=suppress output, YES=show output)|
 
-### Parameters for the `svy_printlogit` macro
+### Parameters for the `%svy_printlogit` macro
 
 |Parameter|Description|
 |---------|-----------|
