@@ -19,26 +19,35 @@ In summary, the macro has been design to provide the user with the following ben
 ## How to use the Macro
 The user should specify input parameters described in the table below unless the description is prefixed by (optional). The user, however, does not interact with the sub-macros. To achieve full potential of the SAS macro, the user must ensure that the analysis dataset is clean, analysis variables are well labelled, and values of variables have been converted into appropriate SAS formats before they can be input to the macro call.
 
+| `%svy_unilogit` and `%svy_multilogit` macros|
 |Parameter|Description|
 |---------|-----------|
-| `%svy_unilogit` and `%svy_multilogit` macros |
-|dataset		|name of input dataset|
-|truthvar	|name of reference/truth variable e.g., abbott_plasma_vl|
-|truthcutvalue	|cutoff value to use to categorize values of test variable as having disease or not e.g., 1,000 so that if value ≥ 1,000 then presence of disease, otherwise absence of disease|
-|testvarlist	|list of diagnostic test variable(s) separated by space e.g., vdbs_vl mdbs_vl ddbs_vl|
-|testcutvalue	|cutoff value to use to categorize values of test variable as having disease or not e.g., 1,000 so that if value ≥ 1,000 then presence of disease, otherwise absence of disease|
+|dataset	|name of input dataset|
+|outcome	|name of dependent binary variable of interest e.g., hiv_status|
+|outevent	|value label of outcome variable (without quotation) to model e.g., Positive, in the case of modeling Hepatitis A risk factors|
+|catvars	|list of categorical explanatory variables (nominal or ordinal) separated by space e.g., age category (in years) which takes the categories; 1=“20-39”, 2=“40-59”, 3=“ >= 60”|
+|class	|class statement for categorical explanatory variables specifying the baseline (reference) category e.g., age_category (ref = “>= 60”)|
+|contvars	|list of continuous explanatory variables separated by space e.g., Age (in years) which takes values from 20 to 70 years|
+|condition	|(optional) any conditional statements to create and or fine-tune the final analysis dataset specified using one IF statement|
+|strata	|(optional) survey stratification variable|
+|cluster	|(optional) survey clustering variable|
+|weight	|(optional) survey weighting variable|
 |domain		|(optional) domain variable for sub-population analysis|
 |domainvalue	|(optional) value of domain/sub-population of interest (should be numeric). Required if domain is specified|
-|condition	|(optional) any conditional statements to create and or fine-tune the final analysis dataset specified using one IF statement|
+|varmethod	|(optional) value for variance estimation method namely Taylor (the default) or replication-based variance estimation methods including JK or BRR|
+|varmethod_opts|	(optional) options for variance estimation method, e.g., jkcoef=1 df=25 for JK|
+|rep_weights_values|	(optional) values for `REPWEIGHTS` statement, but may be specified with replication-based variance estimation method is JK or BRR|
+|missval_lab|	(optional) value label for missing values. If missing data have a format, it should be provided, otherwise macro assumes the default format “.”|
+|missval_opts|	(optional) options for handling missing data within proc survey statement, e.g., `MISSING` or `NOMCAR`. If no option is specified all missing observations are excluded from the analysis|
+|est_decimal|number of decimal places for for estimated percentage |
+|p_value_decimal |number of decimal places for computed p-value |
+|print	|variable for displaying/suppressing the output table on the output window which takes the values (NO=suppress output, YES=show output)|
+
+| `%svy_unilogit` and `%svy_multilogit` macros|
 |outputdir	|path for directory/folder where output is saved|
 |tablename	|short name of output table|
 |tabletitle	|title of output table|
 |surveyname	|abbreviation for survey/study to be included in the output|
-|decimalpoints	|number of decimal places for each estimated measure|
-|alpha		|(optional) desired level of significance (default=0.05, for 95% confidence intervals)|
-|missvaluelabel	|(optional) value label for missing values. If missing data have a format, it should be provided, otherwise macro assumes the default format “.”|
-|varmethod  |(optional) method for computing confidence intervals namely "Normal" (default) for normal distribution or "Wilson" (most desired) for Wilson score or "Exact" for exact binomial approximations|
-|print	|variable for displaying/suppressing the output table on the output window which takes the values (NO=suppress output, YES=show output)|
 
 A sample macro call program, "svy logistic regression anafile.sas", is also provided as part of this repository.
 
